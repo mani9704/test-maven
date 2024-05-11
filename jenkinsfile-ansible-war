@@ -36,7 +36,8 @@ stage('Deploy')
 steps{
 echo "Deploying the Project.........."
 /* sh "cp /var/lib/jenkins/workspace/maven-pipeline-1/target/*.war /opt/tomcat/webapps/" */
-ansiblePlaybook credentialsId: 'b88c130d-a65e-4adb-ae97-fc78816d7c5b', disableHostKeyChecking: true, installation: 'ansible', inventory: 'dev.inv', playbook: 'play.yml', sudoUser: null
+/* ansiblePlaybook credentialsId: 'b88c130d-a65e-4adb-ae97-fc78816d7c5b', disableHostKeyChecking: true, installation: 'ansible', inventory: 'dev.inv', playbook: 'play.yml', sudoUser: null */
+sh cp -r  /var/lib/jenkins/workspace/pipe-1/target/MavenWebApp.war /opt/tomcat/webapps/MavenWebApp.war
 }
 }
 }
